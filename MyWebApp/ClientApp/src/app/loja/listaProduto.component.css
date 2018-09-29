@@ -1,0 +1,9 @@
+﻿
+
+.produto-info img {
+    max-width:250px;
+    float: left;
+    margin: 0 2px;
+    border: solid 1px black;
+
+}

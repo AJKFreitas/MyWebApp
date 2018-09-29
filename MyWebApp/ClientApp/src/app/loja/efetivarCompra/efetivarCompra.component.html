@@ -1,0 +1,37 @@
+
+<div class="row">
+  <div class="alert alert-warning" *ngIf="mensagem">{{ mensagem }}</div>
+  <h3> Efetivar Compra</h3>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr *ngFor="let item of data.pedido.ItensPedidos">
+        <td>
+          <img src="../../../Imagens/celular-samsung.jpg" width="200" height="200" />
+        </td>
+        <td>{{ item.Produto.nome}}</td>
+        <td>{{ item.Quantidade}}</td>
+        <td>{{ item.Produto.preco | currency:"R$":true}}</td>
+        <td>{{ item.Produto.preco * item.Quantidade | currency:"R$":true}}</td>
+
+      </tr>
+    </thead>
+  </table>
+
+  <div class="col-xs-4 col-xs-offset-6 text-right">
+    <table class="table table-condensed">
+      <tr>
+        <td>Total</td>
+        <td>{{ data.pedido.total | currency:"R$":true}}</td>
+      </tr>
+      <tr>
+        <td>Frete</td>
+        <td>R$ 0,00</td>
+      </tr>
+    </table>
+    <button class="btn btn-success" (click)="onEfetivarCompra()">Comprar</button>
+    <a routerLink="" class="btn btn-info">Cancelar</a>
+  </div>
+</div>
+
+
